@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="true"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.7"/>
+   <field name="y" value="0.7"/>
+   <field name="z" value="0.7"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_timer_test">
+  <resource id="5ba36f15-b12-dde-98f-dd7" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5ba3b979-37e-23b-1032-3d4" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="timer_test.lua"/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="5ba36b72-48e1-d11d-59102" name="pendingTimer" type="timer">
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5ba36c4e-7eed-e175-fa107" name="time" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="100.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.9921568627451"/>
+    <field name="green" value="0.50196078431373"/>
+    <field name="blue" value="0.031372549019608"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="keep-aspect"/>
+    <field name="right" value="keep-aspect"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="timer | system"/>
+   <parameter name="text.font_id" value="DroidSansMono"/>
+   <parameter name="text.font_size" value="4.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5ba3aaa4-89b6-af1b-bfd10" name="tick" type="counter">
+   <parameter name="initialValue" value="0"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5ba3b9d4-33b4-c18e-d52c" name="press_to_start" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-top"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="20.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.9921568627451"/>
+    <field name="green" value="0.50196078431373"/>
+    <field name="blue" value="0.031372549019608"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="keep-aspect"/>
+    <field name="right" value="keep-aspect"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Press to start Timer"/>
+   <parameter name="text.font_id" value="DroidSansMono"/>
+   <parameter name="text.font_size" value="4.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5ba36c4e-7eed-e175-fa107"/>
+    <item index="2" value="5ba3b9d4-33b4-c18e-d52c"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="HeadUpDisplay"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters/>
+</Project>
