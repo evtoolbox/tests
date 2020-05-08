@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel_x64">
+<Project version="3.3.0" version-extra="devel">
  <presentationParams>
   <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
@@ -35,18 +35,18 @@
     <item index="4" value="auto"/>
    </field>
   </parameter>
-  <parameter name="useMainCamera" value="true"/>
+  <parameter name="useMainCamera" value="false"/>
   <parameter name="clearColor">
-   <field name="x" value="1"/>
+   <field name="x" value="0.12941176470588"/>
    <field name="y" value="1"/>
    <field name="z" value="1"/>
    <field name="w" value="1"/>
   </parameter>
  </presentationParams>
  <resources dir="resources_video_test">
-  <resource id="5c7e82d4-965-838-db2-b98" kind="video" local="false" forceExport="false" rawAssetsExport="false" name="13_front_rus.webm">
-   <filename value="13_front_rus.webm"/>
-   <source value="C:\ev\cave\package\resources\13_front_rus.webm"/>
+  <resource id="5c7e82d4-965-838-db2-b98" kind="video" local="false" forceExport="false" rawAssetsExport="false" name="ev_logo_720p_vp8_opus.webm">
+   <filename value="ev_logo_720p_vp8_opus.webm"/>
+   <source value="/Users/laptabrok/Projects/git/ev_evi/data/ev_studio/resources/video/ev_logo_720p_vp8_opus.webm"/>
   </resource>
   <resource id="5c7e881d-ad2-3b3-31d-cc7" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
    <filename value="main.lua"/>
@@ -71,7 +71,7 @@
    <parameter name="rect.color">
     <field name="red" value="0"/>
     <field name="green" value="0"/>
-    <field name="blue" value="0"/>
+    <field name="blue" value="1"/>
     <field name="alpha" value="1"/>
    </parameter>
    <parameter name="rect.shift">
@@ -86,6 +86,7 @@
    </parameter>
    <parameter name="rect.scalePolicy" value="inherit"/>
    <parameter name="image.resourceId" value="5c7e82d4-965-838-db2-b98"/>
+   <parameter name="volume" value="1"/>
    <parameter name="playMode"/>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
@@ -93,11 +94,12 @@
   <reactor id="5c7e799e-33b9-fc49-a4ab" name="buttons" type="node.rect">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="4">
+   <parameter name="children" length="5">
     <item index="1" value="5c7e79cf-c479-5fb6-8a6d"/>
     <item index="2" value="5c7e7a69-a85c-1ca7-e96e"/>
     <item index="3" value="5c7e7c66-1422-871e-a176"/>
-    <item index="4" value="5c7e7d65-fbb6-fad5-57ee"/>
+    <item index="4" value="5eb56c03-ead7-b1cb-25a6"/>
+    <item index="5" value="5c7e7d65-fbb6-fad5-57ee"/>
    </parameter>
    <parameter name="layer" value="0.01"/>
    <parameter name="rect.position" value="center-bottom"/>
@@ -124,7 +126,7 @@
    </parameter>
    <parameter name="rect.scalePolicy" value="inherit"/>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5c7e79c5-f283-a3c4-ec34" name="lbl_actions" type="rect.text">
    <parameter name="visible" value="true"/>
@@ -1036,6 +1038,223 @@
   <reactor id="5c7e8a82-c143-8e53-d4dc" name="timer" type="timer">
    <field name="exportEnabled" value="true"/>
   </reactor>
+  <reactor id="5ddbae09-54a6-b334-8a94" name="playback_state" type="switch">
+   <parameter name="options" length="3">
+    <item index="1" value="playing"/>
+    <item index="2" value="paused"/>
+    <item index="3" value="paused_by_system"/>
+   </parameter>
+   <parameter name="defaultOptionIndex" value="2"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5eb56c03-79a4-43da-564e" name="btn_mute" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-top"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="50.000000%"/>
+    <field name="y" value="50.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.56470588235294"/>
+    <field name="green" value="0.56470588235294"/>
+    <field name="blue" value="0.56470588235294"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Mute"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="2.500000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5eb56c03-ead7-b1cb-25a6" name="volume_buttons" type="node.rect">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="4">
+    <item index="1" value="5eb56c03-79a4-43da-564e"/>
+    <item index="2" value="5eb56c04-5182-d726-a36a"/>
+    <item index="3" value="5eb56c04-b8a1-55e8-78d4"/>
+    <item index="4" value="5eb56c04-9235-db12-4266"/>
+   </parameter>
+   <parameter name="layer" value="0.02"/>
+   <parameter name="rect.position" value="right-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="100.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="-25.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5eb56c04-5182-d726-a36a" name="btn_max_volume" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="right-top"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="50.000000%"/>
+    <field name="y" value="50.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43921568627451"/>
+    <field name="green" value="0.43921568627451"/>
+    <field name="blue" value="0.43921568627451"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Max Volume"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="2.500000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5eb56c04-9235-db12-4266" name="btn_volume_down" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="right-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="50.000000%"/>
+    <field name="y" value="50.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.56470588235294"/>
+    <field name="green" value="0.56470588235294"/>
+    <field name="blue" value="0.56470588235294"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Volume -"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="2.500000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5eb56c04-b8a1-55e8-78d4" name="btn_volume_up" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="50.000000%"/>
+    <field name="y" value="50.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43921568627451"/>
+    <field name="green" value="0.43921568627451"/>
+    <field name="blue" value="0.43921568627451"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Volume +"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="2.500000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
   <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
@@ -1048,6 +1267,10 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
+  <reactor id="System" name="System" type="system">
+   <parameter name="albumName" value="evi_app"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
   <reactor id="scene" name="Scene" type="node.scene">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
@@ -1058,7 +1281,9 @@
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
  </reactors>
- <exportParameters last="exe">
-  <parameters format="exe" filename="C:/ev/evtoolbox_tests-git/video_test/video_test.exe" appName="video_test - EVI Windows App" appId="video.test" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="C:/ev/ev_evi/trunk/build/MSWin32-current/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="C:/ev/ev_evi/trunk/build/MSWin32-current/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
+ <exportParameters last="ipa">
+  <parameters format="ipa" filename="/opt/studio_projects/video_test.ipa" appName="video_test - EVI iOS App" appId="ru.CompanyName.video.test" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Users/laptabrok/Projects/git/ev_evi/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/git/ev_evi/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="" supportedOrientations="15" frameSize.width="1280" frameSize.height="720" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="false" retinaSupport="false" appStoreDistribution="false" bundleName="video_test - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений"/>
+  <parameters format="eva" filename="/Users/laptabrok/Projects/git/ev_evi/src/evi_app/ios/Resources/package.eva" appName="App - powered by EV Toolbox" appId="video.test" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Users/laptabrok/Projects/git/ev_evi/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/git/ev_evi/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="false" appStoreDistribution="false" bundleName="video_test - EVA Archive" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+  <parameters format="exe" filename="C:/ev/evtoolbox_tests-git/video_test/video_test.exe" appName="video_test - EVI Windows App" appId="video.test" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="C:/ev/ev_evi/trunk/build/MSWin32-current/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/git/ev_evi/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true" retinaSupport="false" appStoreDistribution="false" bundleName="video_test - EVI Windows App" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
  </exportParameters>
 </Project>

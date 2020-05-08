@@ -1,12 +1,29 @@
+-- Toolbox version >= 3.3 required
+
 EV.Logger.setCatPriority("ev_osg.EVosgAV", "DEBUG")
 
 
 CFG_HISTORY_SIZE		= 8
 CFG_TEST_PERIOD			= 5.0	-- seconds
+CFG_VOLUME_STEP			= 0.1
 
 local video				= reactorController:getReactorByName("video")
 local btnTest			= reactorController:getReactorByName("btn_test")
 local timer				= reactorController:getReactorByName("timer")
+
+local btnVolumeUp		= reactorController:getReactorByName("btn_volume_up")
+local btnVolumeDown		= reactorController:getReactorByName("btn_volume_down")
+
+btnVolumeUp:subscribeEvent("onDown", function()
+	video.volume = math.min(1.0, video.volume + CFG_VOLUME_STEP)
+	loginfo("Volume =", video.volume)
+end)
+
+btnVolumeDown:subscribeEvent("onDown", function()
+	video.volume = math.max(0.0, video.volume - CFG_VOLUME_STEP)
+	loginfo("Volume =", video.volume)
+end)
+
 
 local tests = {
 	{ "play" },
