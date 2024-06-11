@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.5.0" version-extra="devel_x64">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.73333333333333"/>
+   <field name="y" value="0.93333333333333"/>
+   <field name="z" value="0.46666666666667"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_Scenario_Chunk_test_3">
+  <resource internal="true" id="OpenSans-Regular" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="OpenSans-Regular.ttf">
+   <filename value="OpenSans-Regular.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/OpenSans-Regular.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="6668120d-a364-6da2-c449"/>
+   <item id="6668081e-ea9b-5948-c159"/>
+   <item id="66671880-bdfc-d196-9d46"/>
+   <item id="System"/>
+   <item id="66671827-4192-c7be-31c3"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="66680829-ea76-525b-973f"/>
+    <item value="6667183d-54c3-31b3-d7b3"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="HeadUpDisplay"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="66671827-4192-c7be-31c3" name="A" type="scenario.chunk" enabled="true">
+   <parameter name="scenarioChart" value="inline"/>
+   <parameter name="activated" value="false"/>
+   <scenario>
+    <chart owner="EV_Studio" version="1.0">
+     <object type="Reactor">
+      <property name="id" type="long">4800142</property>
+      <property name="relative_position" type="realpoint">-609.000000,-430.000000</property>
+      <property name="reactor" type="reactor_info">
+       <reactor>6668081e-ea9b-5948-c159</reactor>
+      </property>
+      <object type="Action">
+       <property name="id" type="long">5153341</property>
+       <property name="relative_position" type="realpoint">0.000000,44.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <action>activate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">7784216</property>
+       <property name="relative_position" type="realpoint">0.000000,76.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <action>deactivate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">1967850</property>
+       <property name="relative_position" type="realpoint">36.000000,108.000000</property>
+       <property name="event" type="event_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <event>onActivated</event>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">9687972</property>
+       <property name="relative_position" type="realpoint">36.000000,140.000000</property>
+       <property name="event" type="event_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <event>onDeactivated</event>
+        <arguments/>
+       </property>
+      </object>
+     </object>
+     <object type="Reactor">
+      <property name="id" type="long">5561863</property>
+      <property name="relative_position" type="realpoint">-288.000000,-426.000000</property>
+      <property name="reactor" type="reactor_info">
+       <reactor>6668120d-a364-6da2-c449</reactor>
+      </property>
+      <object type="Action">
+       <property name="id" type="long">4037342</property>
+       <property name="relative_position" type="realpoint">0.000000,44.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6668120d-a364-6da2-c449</reactor>
+        <action>activate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">9232582</property>
+       <property name="relative_position" type="realpoint">36.000000,76.000000</property>
+       <property name="event" type="event_info">
+        <reactor>6668120d-a364-6da2-c449</reactor>
+        <event>onActivated</event>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">1033012</property>
+       <property name="relative_position" type="realpoint">36.000000,108.000000</property>
+       <property name="event" type="event_info">
+        <reactor>6668120d-a364-6da2-c449</reactor>
+        <event>onDeactivated</event>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">5096789</property>
+       <property name="relative_position" type="realpoint">0.000000,140.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6668120d-a364-6da2-c449</reactor>
+        <action>deactivate</action>
+        <arguments/>
+       </property>
+      </object>
+     </object>
+     <object type="Reactor">
+      <property name="id" type="long">6541700</property>
+      <property name="relative_position" type="realpoint">-614.000000,-625.000000</property>
+      <property name="reactor" type="reactor_info">
+       <reactor>6667183d-54c3-31b3-d7b3</reactor>
+      </property>
+      <object type="Action">
+       <property name="id" type="long">8091431</property>
+       <property name="relative_position" type="realpoint">0.000000,44.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6667183d-54c3-31b3-d7b3</reactor>
+        <action>show</action>
+        <arguments>
+         <argument name="nodeMask" type="NodeMaskExt">
+          <field name="mask" value="0x0000000F"/>
+          <field name="unchangedBits" value="0x00000000"/>
+         </argument>
+        </arguments>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">2316157</property>
+       <property name="relative_position" type="realpoint">0.000000,76.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6667183d-54c3-31b3-d7b3</reactor>
+        <action>hide</action>
+        <arguments>
+         <argument name="nodeMask" type="NodeMaskExt">
+          <field name="mask" value="0x00000000"/>
+          <field name="unchangedBits" value="0x00000000"/>
+         </argument>
+        </arguments>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">3877109</property>
+       <property name="relative_position" type="realpoint">0.000000,108.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6667183d-54c3-31b3-d7b3</reactor>
+        <action>setNodeMask</action>
+        <arguments>
+         <argument name="nodeMask" type="NodeMaskExt">
+          <field name="mask" value="0x00000000"/>
+          <field name="unchangedBits" value="0x00000000"/>
+         </argument>
+        </arguments>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">9446535</property>
+       <property name="relative_position" type="realpoint">0.000000,140.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6667183d-54c3-31b3-d7b3</reactor>
+        <action>setText_value</action>
+        <arguments>
+         <argument name="value" type="String" value=""/>
+         <argument name="concatenate" type="Bool" value="false"/>
+        </arguments>
+       </property>
+      </object>
+     </object>
+     <object type="Reactor">
+      <property name="id" type="long">6849856</property>
+      <property name="relative_position" type="realpoint">-1022.000000,-571.000000</property>
+      <property name="reactor" type="reactor_info">
+       <reactor>66671827-4192-c7be-31c3</reactor>
+      </property>
+      <object type="Action">
+       <property name="id" type="long">3099307</property>
+       <property name="relative_position" type="realpoint">0.000000,44.000000</property>
+       <property name="action" type="action_info">
+        <reactor>66671827-4192-c7be-31c3</reactor>
+        <action>activate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">1193827</property>
+       <property name="relative_position" type="realpoint">0.000000,76.000000</property>
+       <property name="action" type="action_info">
+        <reactor>66671827-4192-c7be-31c3</reactor>
+        <action>deactivate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">7870019</property>
+       <property name="relative_position" type="realpoint">36.000000,108.000000</property>
+       <property name="event" type="event_info">
+        <reactor>66671827-4192-c7be-31c3</reactor>
+        <event>onActivated</event>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">736026</property>
+       <property name="relative_position" type="realpoint">36.000000,140.000000</property>
+       <property name="event" type="event_info">
+        <reactor>66671827-4192-c7be-31c3</reactor>
+        <event>onDeactivated</event>
+        <arguments/>
+       </property>
+      </object>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">1427952</property>
+      <property name="relative_position" type="realpoint">-1134.000000,-555.000000</property>
+      <property name="source" type="long">7870019</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">8091431</property>
+      <property name="target_offset" type="realpoint">-0.031414,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">280013</property>
+      <property name="relative_position" type="realpoint">-1134.000000,-555.000000</property>
+      <property name="source" type="long">7870019</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">5153341</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">4067720</property>
+      <property name="relative_position" type="realpoint">-1134.000000,-555.000000</property>
+      <property name="source" type="long">1967850</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">7784216</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">8173001</property>
+      <property name="relative_position" type="realpoint">-1134.000000,-555.000000</property>
+      <property name="source" type="long">7870019</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">1193827</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">9679222</property>
+      <property name="relative_position" type="realpoint">-1134.000000,-555.000000</property>
+      <property name="source" type="long">736026</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">3099307</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">9700467</property>
+      <property name="relative_position" type="realpoint">-1327.000000,-677.000000</property>
+      <property name="source" type="long">9687972</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">5153341</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">2565919</property>
+      <property name="relative_position" type="realpoint">-1253.000000,-648.000000</property>
+      <property name="source" type="long">9687972</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">1193827</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">20</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">7394211</property>
+      <property name="relative_position" type="realpoint">-1125.000000,-633.000000</property>
+      <property name="source" type="long">1967850</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">4037342</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">4265563</property>
+      <property name="relative_position" type="realpoint">-1211.000000,-679.000000</property>
+      <property name="source" type="long">9232582</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">4037342</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">3427717</property>
+      <property name="relative_position" type="realpoint">-1211.000000,-679.000000</property>
+      <property name="source" type="long">1033012</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">4037342</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">5574295</property>
+      <property name="relative_position" type="realpoint">-1211.000000,-679.000000</property>
+      <property name="source" type="long">9232582</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">5096789</property>
+      <property name="target_offset" type="realpoint">-0.032609,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+    </chart>
+   </scenario>
+  </reactor>
+  <reactor id="6667183d-54c3-31b3-d7b3" name="Text" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="16.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <parameter name="text.value" value="Chunk text"/>
+  </reactor>
+  <reactor id="66671880-bdfc-d196-9d46" name="Timer" type="timer" enabled="true"/>
+  <reactor id="6668081e-ea9b-5948-c159" name="B" type="scenario.chunk" enabled="true">
+   <parameter name="scenarioChart" value="inline"/>
+   <parameter name="activated" value="false"/>
+   <scenario>
+    <chart owner="EV_Studio" version="1.0">
+     <object type="Reactor">
+      <property name="id" type="long">1739172</property>
+      <property name="relative_position" type="realpoint">-383.000000,-106.000000</property>
+      <property name="reactor" type="reactor_info">
+       <reactor>6668081e-ea9b-5948-c159</reactor>
+      </property>
+      <object type="Action">
+       <property name="id" type="long">323750</property>
+       <property name="relative_position" type="realpoint">0.000000,44.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <action>activate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">3569162</property>
+       <property name="relative_position" type="realpoint">0.000000,76.000000</property>
+       <property name="action" type="action_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <action>deactivate</action>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">2207334</property>
+       <property name="relative_position" type="realpoint">36.000000,108.000000</property>
+       <property name="event" type="event_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <event>onActivated</event>
+        <arguments/>
+       </property>
+      </object>
+      <object type="Event">
+       <property name="id" type="long">7395513</property>
+       <property name="relative_position" type="realpoint">36.000000,140.000000</property>
+       <property name="event" type="event_info">
+        <reactor>6668081e-ea9b-5948-c159</reactor>
+        <event>onDeactivated</event>
+        <arguments/>
+       </property>
+      </object>
+     </object>
+     <object type="Reactor">
+      <property name="id" type="long">4531753</property>
+      <property name="relative_position" type="realpoint">-8.000000,-155.000000</property>
+      <property name="reactor" type="reactor_info">
+       <reactor>66680829-ea76-525b-973f</reactor>
+      </property>
+      <object type="Action">
+       <property name="id" type="long">1984059</property>
+       <property name="relative_position" type="realpoint">0.000000,44.000000</property>
+       <property name="action" type="action_info">
+        <reactor>66680829-ea76-525b-973f</reactor>
+        <action>show</action>
+        <arguments>
+         <argument name="nodeMask" type="NodeMaskExt">
+          <field name="mask" value="0x0000000F"/>
+          <field name="unchangedBits" value="0x00000000"/>
+         </argument>
+        </arguments>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">9944425</property>
+       <property name="relative_position" type="realpoint">0.000000,76.000000</property>
+       <property name="action" type="action_info">
+        <reactor>66680829-ea76-525b-973f</reactor>
+        <action>hide</action>
+        <arguments>
+         <argument name="nodeMask" type="NodeMaskExt">
+          <field name="mask" value="0x00000000"/>
+          <field name="unchangedBits" value="0x00000000"/>
+         </argument>
+        </arguments>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">4686404</property>
+       <property name="relative_position" type="realpoint">0.000000,108.000000</property>
+       <property name="action" type="action_info">
+        <reactor>66680829-ea76-525b-973f</reactor>
+        <action>setNodeMask</action>
+        <arguments>
+         <argument name="nodeMask" type="NodeMaskExt">
+          <field name="mask" value="0x00000000"/>
+          <field name="unchangedBits" value="0x00000000"/>
+         </argument>
+        </arguments>
+       </property>
+      </object>
+      <object type="Action">
+       <property name="id" type="long">4853650</property>
+       <property name="relative_position" type="realpoint">0.000000,140.000000</property>
+       <property name="action" type="action_info">
+        <reactor>66680829-ea76-525b-973f</reactor>
+        <action>setText_value</action>
+        <arguments>
+         <argument name="value" type="String" value=""/>
+         <argument name="concatenate" type="Bool"/>
+        </arguments>
+       </property>
+      </object>
+     </object>
+     <object type="Connection">
+      <property name="id" type="long">1975621</property>
+      <property name="relative_position" type="realpoint">-685.000000,-238.000000</property>
+      <property name="source" type="long">2207334</property>
+      <property name="source_offset" type="realpoint">1.027174,0.500000</property>
+      <property name="target" type="long">1984059</property>
+      <property name="target_offset" type="realpoint">-0.031414,0.500000</property>
+      <property name="priority" type="long">0</property>
+     </object>
+    </chart>
+   </scenario>
+  </reactor>
+  <reactor id="66680829-ea76-525b-973f" name="Text_1" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="16.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <parameter name="text.value" value="Chunk text"/>
+  </reactor>
+  <reactor id="6668120d-a364-6da2-c449" name="C" type="scenario.chunk" enabled="true">
+   <parameter name="scenarioChart" value="inline"/>
+   <parameter name="activated" value="false"/>
+   <scenario>
+    <chart owner="EV_Studio" version="1.0"/>
+   </scenario>
+  </reactor>
+ </reactors>
+ <exportParameters/>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
